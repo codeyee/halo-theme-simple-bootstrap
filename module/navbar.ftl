@@ -4,10 +4,9 @@
 
         <a class="navbar-brand font-weight-bold" href="${blog_url!}">
             <#if (options.blog_logo)?? && options.blog_logo?trim != ''>
-                <img src="${options.blog_logo!}" width="30" height="30"
+                <img src="${options.blog_logo!}" width="135" height="35"
                      class="d-inline-block align-top mr-2" alt="${blog_title!}">
             </#if>
-            ${blog_title!}
         </a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -17,7 +16,7 @@
 
         <div class="collapse navbar-collapse pl-1" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <#-- ?sort_by('priority')：根据菜单的排序编号排序 -->
+            <#-- ?sort_by('priority')：根据菜单的排序编号排序 -->
                 <@menuTag method="list">
                     <#list menus?sort_by('priority') as menu>
                         <li class="nav-item">
@@ -50,8 +49,8 @@
                                 <a class="dropdown-item" href="${categories_url!}">
                                     全部分类
                                     (<@postTag method="count">
-                                        ${count!}
-                                    </@postTag>)
+                                    ${count!}
+                                </@postTag>)
                                 </a>
 
                             </div>
@@ -68,4 +67,3 @@
         </div>
     </nav>
 </section>
-
